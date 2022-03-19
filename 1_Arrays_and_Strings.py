@@ -58,19 +58,32 @@ def oneAway(str1,str2):
 #oneAway(input(),input())
 
 def compString(str1):
-    str1=list(str1)
-    str2=str1.copy()
-    for i in range(0,len(str1)-1):
-        coef=1
-        while str1[i] ==str1[i+1]:
-            coef=coef+1
+    def finalize():
+        for n in range(len(coef)):
+            final.append(str1[sum(coef[0:n+1])-1])
+            final.append(str(coef[n]))
+        print(''.join(final))
+    i=0
+    coef = []
+    final=[]
+    while i<len(str1)-1:
+        coef.append(1)
+        while str1[i]==str1[i+1]:
+            coef[-1]=coef[-1]+1
             i=i+1
-            str2.pop(i+1)
-        str2.insert(i,coef)
-    print(str2)
+            if i ==len(str1)-1:
+                finalize()
+                return
+        i=i+1
+    if str1[i - 1] != str1[i] and i == len(str1)-1 :
+        coef.append(1)
+
+    finalize()
 
 
-compString(input())
+
+
+#compString(input())
 
 
 

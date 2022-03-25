@@ -80,10 +80,26 @@ def compString(str1):
 
     finalize()
 
+def compStringV2(str1):
+    str1=list(str1)
+    comp=[]
+    i=0
+    while i <len(str1)-1:
+        coef=1
+        comp.append(str1[i])
+        while str1[i]==str1[i+1]:
+            coef+=1
+            i+=1
+            if i == len(str1)-1:
+                comp.append(str(coef))
+                print(''.join(comp))
+                return
+        comp.append(str(coef))
+        i+=1
+    print(''.join(comp))
 
 
-
-#compString(input())
+#compStringV2(input())
 
 
 

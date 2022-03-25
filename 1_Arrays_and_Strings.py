@@ -101,6 +101,28 @@ def compStringV2(str1):
 
 #compStringV2(input())
 
+def rotateMatrix(matrix):
+    col=len(matrix[0])
+    row=len(matrix)
+    newMatrix=[([0]*col) for n in range(row)]
+
+    for i in matrix:
+        print(i)
+    print("\n")
+
+    for i in range(len(matrix)):
+        for j in range(len(matrix[i])):
+            newMatrix[j][col-i-1]=matrix[i][j]
+    for i in newMatrix:
+        print(i)
+
+# mtr=[[1,2,3,4,5],
+#      [6,7,8,9,10],
+#      [11,12,13,14,15],
+#      [16,17,18,19,20],
+#      [21,22,23,24,25]]
+# rotateMatrix(mtr)
+
 
 
 

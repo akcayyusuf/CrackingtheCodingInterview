@@ -118,11 +118,24 @@ def rotateMatrix(matrix):
 
 # mtr=[[1,2,3,4,5],
 #      [6,7,8,9,10],
-#      [11,12,13,14,15],
+#      [11,0,13,14,15],
 #      [16,17,18,19,20],
 #      [21,22,23,24,25]]
 # rotateMatrix(mtr)
+from copy import deepcopy
+def zeroMatrix(mtr):
+    mtrShow=deepcopy(mtr)
+
+    for i in range(len(mtr)):
+        for j in range(len(mtr[i])):
+            if mtr[i][j]==0:
+                for n in range(len(mtr[i])):
+                    mtrShow[i][n]=0
+                for n in range(len(mtr)):
+                    mtrShow[n][j]=0
 
 
+    for i in mtrShow:
+        print(i)
 
-
+#zeroMatrix(mtr)
